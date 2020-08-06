@@ -4,13 +4,13 @@ import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 
-const KEY = 'AIzaSyCN6e98GjAfa_d4E4mISSn8uCP6g5b1DvE';
+const KEY = 'AIzaSyBzUF6Yw0QVOV90IBu1W3Oowv0lozdFg8Q';
 
 class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
   componentDidMount() {
-    this.onTermSubmit('');
+    this.onTermSubmit('090_Saurav Pandey');
   }
 
   onTermSubmit = async (term) => {
@@ -36,14 +36,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container">
+      <div>
         <SearchBar onFormSubmit={this.onTermSubmit} />
-        <div className="ui-grid">
-          <div className="ui row">
-            <div className="eleven wide column">
+        <div>
+          <div>
+            <div>
               <VideoDetail video={this.state.selectedVideo} />
             </div>
-            <div className="five wide column">
+            <div>
               <VideoList
                 onVideoSelect={this.onVideoSelect}
                 videos={this.state.videos}
